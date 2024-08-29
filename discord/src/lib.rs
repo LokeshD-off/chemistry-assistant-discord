@@ -90,7 +90,7 @@ async fn handler(msg: Message) {
             _ = discord.edit_message(
                 channel_id.into(), placeholder.id.into(),
                 &serde_json::json!({
-                    "content": "Sorry, an error has occured. Please try again later!"
+                    "content": "Sorry, somehow an error has occured. Please try again later!"
                 }),
             ).await;
             log::error!("OpenAI returns error: {}", e);
