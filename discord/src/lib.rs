@@ -73,7 +73,7 @@ async fn handler(msg: Message) {
     let co = ChatOptions {
         restart: restart,
         system_prompt: Some(&system_prompt),
-        token_limit: 4096,
+        token_limit: 100,
         ..Default::default()
     };
 
@@ -83,7 +83,7 @@ async fn handler(msg: Message) {
                 channel_id.into(), placeholder.id.into(),
                 &serde_json::json!({
                     "content": r.choice
-                }),
+                })
             ).await;
         }
         Err(e) => {
